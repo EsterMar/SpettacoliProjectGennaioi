@@ -1,0 +1,37 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/SpringBootKeycloak
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spettacoliTeatrali
+    username: postgres
+    password: cROCARINAPAH2!
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8081
+
+jwt:
+  auth:
+    converter:
+      resource-id: SpringBootKeycloak
+      principle-attribute: preferred_username
+
+
+
+
+
+
+
+
+
+
+
+
